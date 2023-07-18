@@ -105,9 +105,13 @@ posts.forEach((element) => {
 
     //creo funzione click
     likeButton.addEventListener("click", function () {
-        const likesCounter = document.querySelector(".js-likes-counter");
+        const likesCounter = document.querySelectorAll(".js-likes-counter");
+        console.log(likesCounter);
         //incremento il like e aggiungo colore
-        likesCounter.innerHTML = element.likes++;
-        likeButton.style.color = 'blue';
+        for (let i = 0; i < likesCounter.length; i++) {
+            likesCounter.innerHTML = element.likes++;
+            likeButton.style.color = 'blue';
+        }
+        
     });
     })
