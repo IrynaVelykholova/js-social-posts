@@ -99,4 +99,15 @@ posts.forEach((element) => {
         </div> 
     </div>            
     </div>`;
+
+    //creo variabile per il like button
+    const likeButton = document.querySelector(".like-button");  
+
+    //creo funzione click
+    likeButton.addEventListener("click", function () {
+        const likesCounter = document.querySelector(".js-likes-counter");
+        //incremento il like e aggiungo colore
+        likesCounter.innerHTML = element.likes++;
+        likeButton.style.color = 'blue';
+    });
     })
